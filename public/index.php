@@ -1,4 +1,11 @@
 <?php
-require __DIR__ .'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-print 'Hello World';
+$url = substr($_SERVER['REQUEST_URI'],1);
+$url = explode('/', $url);
+
+
+$controller = isset($url[0]) && $url[0]  ? $url[0] : 'home';
+print $controller;
+
+
